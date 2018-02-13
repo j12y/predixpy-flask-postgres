@@ -1,0 +1,7 @@
+---
+applications:
+- name: predixpy-flask-dbaas-demo
+  random-route: true
+  memory: 512M
+services:
+- predixpy-flask-postgres

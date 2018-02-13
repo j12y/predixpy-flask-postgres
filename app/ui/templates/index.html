@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Predix Postgres Demo App</title>
+</head>
+<body>
+    <h1>PredixPy + Predix DBaaS</h1>
+    <p>This is a quick demonstration for using the Predix Python SDK in
+    combination with the Predix DBaaS.</p>
+
+    <p>If you GET the endpoint <i>/api/1.0/dbaas</i> you will get results from a
+    full table scan for a simple query.  If you POST to the same endpoint you
+    can insert an additional row.</p>
+
+    <p>You can also use this form.</p>
+
+
+    <form action="/">
+        <p><b>A</b>:<input type="text" name="a"></p>
+        <p><b>B</b>:<input type="text" name="b"></p>
+        <p><b>C</b>:<input type="text" name="c"></p>
+        <input type="submit" value="ADD">
+    </form>
+
+    <p><i>{{ msg }}</i></p>
+
+    <p><b>Results</b>:</p>
+    <table border="1" width="100%">
+        <tr><th>A</th><th>B</th><th>C</th></tr>
+        {% for row in rs %}
+        <tr><td>{{ row.a }}</td><td>{{ row.b }}</td><td>{{ row.c }}</td></tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
